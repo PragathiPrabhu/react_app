@@ -1,29 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const [count,setCount]=useState(0);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hellooo <code> Bhavisshhhhhh</code> :-)
-        </p>
-
-        <p className="name">
-          Hellooo <code> Pragathiiii</code> :-)
-        </p> 
-
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App">    
+        <div  className="mainContainer">
+          <h1>Counter</h1>
+          <div className='counter'>{count}</div>
+          <div className='btnContainer'>
+          <button className='counterButton' onClick={()=>{setCount(count-1)}}>-</button>
+          <button className='counterButton'  onClick={()=>{setCount(count+1)}}>+</button>
+          </div>
+        </div>
     </div>
   );
 }
